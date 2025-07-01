@@ -1,6 +1,6 @@
 	Question Set 1 - Easy 
 
- Q1: Who is the senior most employee based on job title? */
+ Q1: Who is the senior most employee based on job title? 
 
 SELECT title, last_name, first_name 
 FROM employee
@@ -8,7 +8,7 @@ ORDER BY levels DESC
 LIMIT 1
 
 
- Q2: Which countries have the most Invoices? */
+ Q2: Which countries have the most Invoices? 
 
 SELECT COUNT(*) as c, billing_country 
 FROM invoice
@@ -16,7 +16,7 @@ GROUP BY billing_country
 ORDER BY c DESC
 
 
- Q3: What are top 3 values of total invoice? */
+ Q3: What are top 3 values of total invoice? 
 
 SELECT total 
 FROM invoice
@@ -25,7 +25,7 @@ ORDER BY total DESC
 
  Q4: Which city has the best customers? We would like to throw a promotional Music Festival in the city we made the most money. 
 Write a query that returns one city that has the highest sum of invoice totals. 
-Return both the city name & sum of all invoice totals */
+Return both the city name & sum of all invoice totals 
 
 SELECT billing_city,SUM(total) AS InvoiceTotal
 FROM invoice
@@ -47,12 +47,12 @@ LIMIT 1;
 
 
 
- Question Set 2 - Moderate */
+ Question Set 2 - Moderate 
 
  Q1: Write query to return the email, first name, last name, & Genre of all Rock Music listeners. 
 Return your list ordered alphabetically by email starting with A. */
 
-/*Method 1 */
+Method 1 
 
 SELECT DISTINCT email,first_name, last_name
 FROM customer
@@ -79,7 +79,7 @@ ORDER BY email;
 
 
  Q2: Let's invite the artists who have written the most rock music in our dataset. 
-Write a query that returns the Artist name and total track count of the top 10 rock bands. */
+Write a query that returns the Artist name and total track count of the top 10 rock bands. 
 
 SELECT artist.artist_id, artist.name,COUNT(artist.artist_id) AS number_of_songs
 FROM track
@@ -93,7 +93,7 @@ LIMIT 10;
 
 
  Q3: Return all the track names that have a song length longer than the average song length. 
-Return the Name and Milliseconds for each track. Order by the song length with the longest songs listed first. */
+Return the Name and Milliseconds for each track. Order by the song length with the longest songs listed first. 
 
 SELECT name,miliseconds
 FROM track
@@ -105,9 +105,9 @@ ORDER BY miliseconds DESC;
 
 
 
- Question Set 3 - Advance */
+ Question Set 3 - Advance 
 
- Q1: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent */
+ Q1: Find how much amount spent by each customer on artists? Write a query to return customer name, artist name and total spent 
 
  Steps to Solve: First, find which artist has earned the most according to the InvoiceLines. Now use this artist to find 
 which customer spent the most on this artist. For this query, you will need to use the Invoice, InvoiceLine, Track, Customer, 
